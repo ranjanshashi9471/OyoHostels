@@ -1,0 +1,36 @@
+<% layout('layouts/boilerplate.ejs') %>
+
+<div class="mx-auto mt-5 p-3 card shadow bg-body-tertiary" style="max-width: 540px;">
+    <div class="row g-0">
+        <div class="col-md-4 pt-2">
+            <img src="https://res.cloudinary.com/dvcaz05sg/image/upload/v1678884919/YelpCamp/xzercjxekygjsbvtfcec.avif" class="img-fluid rounded start" alt="">
+        </div>
+        <div class="col-md-8">
+<!--            <div class=" bg-transparent">-->
+                <div class="card-body">
+                    <h5 class="card-title">Login</h5>
+                    <form action="/login" method="POST" class="validated-form" novalidate>
+                        <div class="mb-3">
+                            <label class="form-label" for="username">Username</label>
+                            <input class="form-control" type="text" id="username" name="username" autofocus required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="password">Password</label>
+                            <input class="form-control" type="password" id="password" name="password" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="d-grid">
+                            <button class="btn btn-success btn-block">Login</button>
+                        </div>
+                    </form>
+                </div>
+<!--            </div>-->
+        </div>
+    </div>
+</div>
+

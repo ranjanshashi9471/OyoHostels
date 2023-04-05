@@ -1,0 +1,41 @@
+<% layout('layouts/boilerplate.ejs') %>
+<div class="mx-auto mt-5 mb-3 p-3 card shadow bg-body-tertiary container-fluid" style="max-width: 600px;">
+    <div class="row g-0">
+        <div class="col-md-5 pt-2">
+            <img src="https://res.cloudinary.com/dvcaz05sg/image/upload/v1678884919/YelpCamp/xzercjxekygjsbvtfcec.avif" class="img-fluid rounded start" alt="">
+        </div>
+        <div class="col-md-7">
+            <!--            <div class=" bg-transparent">-->
+            <div class="card-body">
+                <h5 class="card-title">Register</h5>
+                <form action="/register" method="POST" class="validated-form" novalidate>
+                    <div class="mb-3">
+                        <label class="form-label" for="username">Username</label>
+                        <input class="form-control" type="text" id="username" name="username" autofocus required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="email">Email</label>
+                        <input class="form-control" type="email" id="email" name="email" autofocus required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="password">Password</label>
+                        <input class="form-control" type="password" id="password" name="password" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="d-grid">
+                        <button class="btn btn-success btn-block">Register</button>
+                    </div>
+                </form>
+            </div>
+            <!--            </div>-->
+        </div>
+    </div>
+</div>
