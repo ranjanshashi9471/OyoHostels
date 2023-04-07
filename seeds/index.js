@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 mongoose.set('strictQuery',false);
-mongoose.connect("mongodb+srv://ranjanshashi9471:pintu9471@cluster0.etdefem.mongodb.net/yelpcamp?retryWrites=true&w=majority")
+mongoose.connect(process.env.MONGODB)
     .then(()=>{
         console.log("Mongodb Connection open");
     })
