@@ -31,13 +31,25 @@ const seedDB = async () => {
             price: price,
             images:[
                 {
-                    url: 'https://images.unsplash.com/photo-1571863533956-01c88e79957e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80',
+                    url: 'https://images.pexels.com/photos/4217/hotel-bed-bedroom-room.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
                     filename: 'YelpCamp/xzercjxekygjsbvtfcec',        
                   },
                   {
-                    url: 'https://res.cloudinary.com/dvcaz05sg/image/upload/v1678884919/YelpCamp/dpcwnpfboigxaivfeem4.avif',
+                    url: 'https://images.pexels.com/photos/4217/hotel-bed-bedroom-room.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
                     filename: 'YelpCamp/dpcwnpfboigxaivfeem4',    
-                  }
+                  },
+                {
+                    url: 'https://images.pexels.com/photos/4217/hotel-bed-bedroom-room.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+                    filename: 'YelpCamp/dpcwnpfboigxaivfeem4',
+                },
+                {
+                    url: 'https://images.pexels.com/photos/4217/hotel-bed-bedroom-room.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+                    filename: 'YelpCamp/dpcwnpfboigxaivfeem4',
+                },
+                {
+                    url: 'https://images.pexels.com/photos/4217/hotel-bed-bedroom-room.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+                    filename: 'YelpCamp/dpcwnpfboigxaivfeem4',
+                }
             ]
         })
         await camp.save();
