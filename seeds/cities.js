@@ -1,4 +1,38 @@
-module.exports = [
+module.exports.newData = [
+    {
+        name: "Sai Kripa Boys Hostel",
+        latitude: 23.37536492719048,
+        longitude: 85.34209325904644,
+        location: 'KM Mallik Rd, near D.A.V Nandraj School, Lalpur, Ranchi, Jharkhand 834001',
+    },
+    {
+        name: "Sipra girls Hostel",
+        latitude: 23.373848284955383,
+        longitude: 85.34256532783041,
+        location: '171, Hazaribag Rd, Lalpur, Ranchi, Jharkhand 834001',
+    },
+    {
+        name: "Nishant Boys Hostel",
+        latitude: 23.370145241405993,
+        longitude: 85.3436382114304,
+        location:" Peace Rd Near Holy Cross Girls High School, Lalpur, Ranchi, Jharkhand 834001",
+    },
+    {
+        name: "Sadhna Hostel",
+        latitude: 28.557840072262977,
+        longitude: 77.16994687909806,
+        location:'200A, Munirka Enclave, Munirka, New Delhi, Delhi 110067'
+    },
+    {
+        name: "Annapurna Boys Hostel",
+        latitude: 28.553015123651434,
+        longitude: 77.17535421248422,
+        location: '28, DDA Flats, Hauz Khas, New Delhi, Delhi 110017'
+    }
+]
+
+
+module.exports.oldData = [
     {
         city: "New York",
         growth_from_2000_to_2013: "4.8%",
