@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 mongoose.set('strictQuery',false);
-mongoose.connect('mongodb://127.0.0.1/yelp-camp')
+mongoose.connect("mongodb+srv://ranjanshashi9471:pintu9471@cluster0.etdefem.mongodb.net/yelpcamp?retryWrites=true&w=majority")
     .then(()=>{
         console.log("Mongodb Connection open");
     })
@@ -23,7 +23,7 @@ const { newData } =require('./cities.js');
         await Campground.deleteMany({});
         for(let data of newData){
             const camp = new Campground({
-                author: '64096a31a1847998718e0852',
+                author: '643062dfdeb95fc18fa09750',
                 title: `${data.name}`,
                 description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque explicabo, at esse ipsa possimus lorem Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque explicabo, at esse ipsa possimus",
                 price: 20,

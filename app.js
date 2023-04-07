@@ -22,7 +22,7 @@ const mongoSanitize = require('express-mongo-sanitize');
 
 // ------------------------------------- CONNECTING TO THE DATABASE ------------------------------------------------
 mongoose.set('strictQuery',false);
-mongoose.connect('mongodb://127.0.0.1/yelp-camp')
+mongoose.connect(process.env.MONGODB)
     .then(()=>{
         console.log("Mongodb Connection open");
     })

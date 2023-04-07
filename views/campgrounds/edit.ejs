@@ -1,7 +1,7 @@
 
-<div class="row">
+<div class="row mb-5 mx-5">
     <h1 class="text-center">Edit Campground</h1>
-    <div class="col-6 offset-3">
+    <div class="col-md-6 offset-3 shadow rounded pb-3 pt-2 mx-auto bg-light">
         <form action="/campgrounds/<%=campground._id%>?_method=PUT" method="POST" class="validated-form" novalidate 
             enctype="multipart/form-data">
             <div class="mb-3">
@@ -53,7 +53,7 @@
                 <button class="btn btn-info">Update Campground</button>
             </div>
         </form>
-        <a href="/campgrounds/<%=campground._id%>">Back to campground</a>
+        <a class="text-decoration-none text-secondary" href="/campgrounds/<%=campground._id%>">Back to campground</a>
     </div>
 </div>    
 <% layout('layouts/boilerplate.ejs') %>
