@@ -16,9 +16,9 @@ const { newData } =require('./cities.js');
 // const {places, descriptors} = require('./seedHelper.js');
 
 
-const sample = (array) => array[Math.floor(Math.random()*(array.length))];
+// const sample = (array) => array[Math.floor(Math.random()*(array.length))];
 
-//my code
+//my code here
     const seedDB = async() => {
         await Campground.deleteMany({});
         for(let data of newData){
