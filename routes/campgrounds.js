@@ -21,5 +21,6 @@ router.route('/:id')
 
 
 router.get('/:id/edit',isLoggedIn, isAuthor, catchAsync(campgrounds.renderEditForm));
+router.post('/search',catchAsync(campgrounds.searchCampground));
 
 module.exports = router;

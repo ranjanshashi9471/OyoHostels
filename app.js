@@ -19,6 +19,8 @@ const campgroundRoutes = require('./routes/campgrounds');
 const reviewRoutes = require('./routes/reviews');
 
 const mongoSanitize = require('express-mongo-sanitize');
+const Campground = require('./models/campground');
+const { log } = require('console');
 
 // ------------------------------------- CONNECTING TO THE DATABASE ------------------------------------------------
 mongoose.set('strictQuery',false);
