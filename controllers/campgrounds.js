@@ -9,6 +9,12 @@ module.exports.index = async(req, res) => {
     res.render('campgrounds/index.ejs',{campgrounds});
 }
 
+module.exports.searchCampground = async(req, res) => {
+    const { location } = req.body;
+    const campgrounds = await Campground.find({location: { $regex : `(?i)${location}`}});
+    res.render('campgrounds/index.ejs', { campgrounds });
+}
+
 module.exports.renderNewForm = (req, res) => {
     res.render('campgrounds/new.ejs')
 }
