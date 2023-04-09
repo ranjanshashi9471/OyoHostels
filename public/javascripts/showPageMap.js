@@ -1,5 +1,4 @@
 mapboxgl.accessToken = mapToken;
-console.log(campground);
 const map = new mapboxgl.Map({
 container: 'map', // container ID
 style: 'mapbox://styles/mapbox/light-v10', // style URL
@@ -8,8 +7,6 @@ zoom: 9, // starting zoom
 });
 
 map.addControl(new mapboxgl.NavigationControl());
-
-console.log(campground.geometry.coordinates);
 new mapboxgl.Marker()
     .setLngLat(campground.geometry.coordinates)
     .setPopup(
