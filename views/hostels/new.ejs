@@ -21,15 +21,15 @@
                 </div>
                 <div class=" row gx-0 mb-1">
                     <input class="col form-control me-3" type="text" id="latitude" name="hostel[latitude]"
-                           placeholder="Latitude">
+                           placeholder="Latitude" required>
                     <input class="col form-control" type="text" id="longitude" name="hostel[longitude]"
-                           placeholder="Longitude">
+                           placeholder="Longitude" required>
                 </div>
             </div>
             <div class="mb-3">
                 <label class="form-label" for="location" for="price">Hostel Price</label>
                 <div class="input-group mb-3">
-                    <span class="input-group-text" id="price-label">$</span>
+                    <span class="input-group-text" id="price-label">Rs.</span>
                     <input type="number" class="form-control" placeholder="0.00" id="price" aria-label="Price"
                            name="hostel[price]" aria-describedby="price-label" required>
                     <div class="valid-feedback">
@@ -38,9 +38,9 @@
                 </div>
             </div>
             <div class="mb-3">
-                <label class="form-label" for="description">description</label>
+                <label class="form-label" for="description">Description</label>
                 <textarea class="form-control" type="text" id="description" name="hostel[description]"
-                          required></textarea>
+                          required placeholder="Please Provide Contact Number With Description"></textarea>
                 <div class="valid-feedback">
                     Looks good!
                 </div>

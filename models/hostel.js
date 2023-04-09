@@ -35,6 +35,8 @@ const HostelSchema = new Schema({
     price: Number,
     description: String,
     location: String,
+    latitude: Number,
+    longitude: Number,
     author:{
         type: Schema.Types.ObjectId,
         ref: 'User'

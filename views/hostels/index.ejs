@@ -1,23 +1,20 @@
 <% layout('layouts/boilerplate')%>
 
 <style>
-    .card-cont{
-        background: transparent;
-    }
     .card-cont:hover{
-        background-color: aquamarine;
+        background:transparent;
         overflow: hidden;
     }
 </style>
-<div id="cluster-map"></div>
+<div class="p-3 rounded shadow"><div id="cluster-map"></div></div>
 <div class="container">
-    <h1>All Hostels</h1>
+    <h1 class="mx-3">All Hostels</h1>
     <% for (let hostel of hostels){%>
-    <div data-aos="zoom-out-right" class="card mb-3 mx-5 mt-2">
-        <div class="row p-3">
+    <div class="card m-3 shadow card-cont">
+        <div class="row p-4">
             <div class="col-md-4">
                 <%if(hostel.images.length) {%>
-                <img class="img-fluid rounded start" alt="" src="<%=hostel.images[0].url%>">
+                <img class="img-fluid pt-4" alt="" src="<%=hostel.images[0].url%>">
                 <% }else {%>
                     <img class="img-fluid" alt=""
                          src="https://res.cloudinary.com/douqbebwk/image/upload/v1600103881/YelpCamp/lz8jjv2gyynjil7lswf4.png">

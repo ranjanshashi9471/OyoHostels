@@ -10,8 +10,8 @@
                     <p class="card-text"><%= hostel.description %></p>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item ps-0 text-muted"><%= hostel.location %></li>
-                        <li class="list-group-item ps-0">Submitted by <%= hostel.author.username %></li>
-                        <li class="list-group-item ps-0">$<%= hostel.price %>/night</li>
+                        <li class="list-group-item ps-0">Owned by <%= hostel.author.username %></li>
+                        <li class="list-group-item ps-0">Rs.<%= hostel.price %>/month</li>
                     </ul>
                     <div class="pt-3">
                         <% if(currentUser && hostel.author.equals(currentUser._id)){ %>
@@ -90,7 +90,7 @@
 </div>
 <div class="row mx-3 p-3 mb-3 bg-body-tertiary rounded-2">
     <% for(let review of hostel.reviews){ %>
-        <div class="card col-md-3">
+        <div class="card col-md-3 me-3">
             <div class="card-body">
                 <h5 class="card-title"><%= review.author.username %></h5>
                 <p class="starability-result" data-rating="<%= review.rating %>">

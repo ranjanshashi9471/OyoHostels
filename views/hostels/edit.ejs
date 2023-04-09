@@ -22,15 +22,15 @@
                 </div>
                 <div class=" row gx-0 mb-1">
                     <input class="col form-control me-3" type="text" id="latitude" name="hostel[latitude]"
-                           placeholder="Latitude">
+                           placeholder="Latitude" value="<%= hostel.latitude %>" required>
                     <input class="col form-control" type="text" id="longitude" name="hostel[longitude]"
-                           placeholder="Longitude">
+                           placeholder="Longitude" value="<%= hostel.longitude %>" required>
                 </div>
             </div>
             <div class="mb-3">
                 <label class="form-label" for="location" for="price">Hostel Price</label>
                 <div class="input-group mb-3">
-                    <span class="input-group-text" id="price-label">$</span>
+                    <span class="input-group-text" id="price-label">Rs.</span>
                     <input type="number" class="form-control" placeholder="0.00" id="price" aria-label="Price"
                            name="hostel[price]" value="<%= hostel.price %>" aria-describedby="price-label"
                            required>
