@@ -57,9 +57,7 @@ CampgroundSchema.virtual('properties.popUpMarkup').get(function(){
 CampgroundSchema.post('findOneAndDelete', async function(doc){
     if(doc){
         const review = await Review.deleteMany({_id:{$in:doc.reviews}})
-        console.log(review);
     }
-    
 })
 
 const Campground = mongoose.model('Campground', CampgroundSchema);
