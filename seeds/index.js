@@ -11,7 +11,7 @@ mongoose.connect(process.env.MONGODB)
         console.log(err);
     });
 
-const Campground = require('../models/campground.js');
+const Hostel = require('../models/hostel.js');
 // const Cities = require('./cities.js');
 const { newData } =require('./cities.js');
 // const {places, descriptors} = require('./seedHelper.js');
@@ -21,9 +21,9 @@ const { newData } =require('./cities.js');
 
 //my code here
     const seedDB = async() => {
-        await Campground.deleteMany({});
+        await Hostel.deleteMany({});
         for(let data of newData){
-            const camp = new Campground({
+            const camp = new Hostel({
                 author: '6432683b32d1f0445515cecf',
                 title: `${data.name}`,
                 description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque explicabo, at esse ipsa possimus lorem Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque explicabo, at esse ipsa possimus",
@@ -45,11 +45,11 @@ const { newData } =require('./cities.js');
 
 // const seedDB = async () => {
 
-//     await Campground.deleteMany({});
+//     await Hostel.deleteMany({});
 //     for(let i=0;i<300;i++){
 //         const random1000 = Math.floor(Math.random()*1000);
 //         const price = Math.floor(Math.random()*30) + 10;
-//         const camp = new Campground({
+//         const camp = new Hostel({
 //             author: '6429bf38828adfa5b5d1d971',
 //             location:`${Cities[random1000].city}, ${Cities[random1000].state}`,
 //             title:`${sample(descriptors)}, ${sample(places)}`,

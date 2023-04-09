@@ -14,7 +14,7 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const User = require('./models/user');
 const userRoutes = require('./routes/users');
-const campgroundRoutes = require('./routes/campgrounds');
+const hostelRoutes = require('./routes/hostels');
 const reviewRoutes = require('./routes/reviews');
 const mongoSanitize = require('express-mongo-sanitize');
 
@@ -72,8 +72,8 @@ app.use((req, res, next) => {
 })
 
 app.use('/', userRoutes); 
-app.use('/campgrounds', campgroundRoutes);
-app.use('/campgrounds/:id/reviews', reviewRoutes);
+app.use('/hostels', hostelRoutes);
+app.use('/hostels/:id/reviews', reviewRoutes);
 
 app.get("/",(req, res) =>{
     res.render('home.ejs');

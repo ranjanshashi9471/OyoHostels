@@ -6,17 +6,17 @@
         <div class="row g-0 m-3">
             <div class="col-md-5 me-auto">
                 <div class="card-body">
-                    <h2 class="card-title"><%= campground.title %></h2>
-                    <p class="card-text"><%= campground.description %></p>
+                    <h2 class="card-title"><%= hostel.title %></h2>
+                    <p class="card-text"><%= hostel.description %></p>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item ps-0 text-muted"><%= campground.location %></li>
-                        <li class="list-group-item ps-0">Submitted by <%= campground.author.username %></li>
-                        <li class="list-group-item ps-0">$<%= campground.price %>/night</li>
+                        <li class="list-group-item ps-0 text-muted"><%= hostel.location %></li>
+                        <li class="list-group-item ps-0">Submitted by <%= hostel.author.username %></li>
+                        <li class="list-group-item ps-0">$<%= hostel.price %>/night</li>
                     </ul>
                     <div class="pt-3">
-                        <% if(currentUser && campground.author.equals(currentUser._id)){ %>
-                            <a href="/campgrounds/<%= campground._id %>/edit" class="card-link btn btn-info">Edit</a>
-                            <form class="d-inline" action="/campgrounds/<%= campground._id %>?_method=DELETE"
+                        <% if(currentUser && hostel.author.equals(currentUser._id)){ %>
+                            <a href="/hostels/<%= hostel._id %>/edit" class="card-link btn btn-info">Edit</a>
+                            <form class="d-inline" action="/hostels/<%= hostel._id %>?_method=DELETE"
                                 method="POST">
                                 <button class="ms-2 card-link btn btn-danger">Delete</button>
                             </form>
@@ -27,7 +27,7 @@
             <div class="col-md-6 ms-auto">
                 <div id="carouselExample" class="carousel slide">
                     <div class="carousel-inner">
-                        <% campground.images.forEach((img, i)=>{ %>
+                        <% hostel.images.forEach((img, i)=>{ %>
                             <div class="carousel-item  <%= i === 0 ? 'active' : '' %>">
                                 <img src="<%= img.url %>" class="img-fluid rounded" alt="..."
                                      style="">
@@ -57,7 +57,7 @@
 <% if(currentUser){ %>
 <div class="row mx-3 p-3 mb-3 bg-body-tertiary rounded-2">
     <h2>Leave a Review</h2>
-    <form action="/campgrounds/<%= campground._id %>/reviews" method="POST" class="mb-3 validated-form"
+    <form action="/hostels/<%= hostel._id %>/reviews" method="POST" class="mb-3 validated-form"
           novalidate>
         <div class="mb-3">
             <fieldset class="starability-basic">
@@ -89,7 +89,7 @@
     <% } %>
 </div>
 <div class="row mx-3 p-3 mb-3 bg-body-tertiary rounded-2">
-    <% for(let review of campground.reviews){ %>
+    <% for(let review of hostel.reviews){ %>
         <div class="card col-md-3">
             <div class="card-body">
                 <h5 class="card-title"><%= review.author.username %></h5>
@@ -98,7 +98,7 @@
                 </p>
                 <p class="card-text">Review: <%= review.body %></p>
                 <% if(currentUser && review.author.equals(currentUser._id)){ %>
-                    <form action="/campgrounds/<%= campground._id %>/reviews/<%= review._id %>?_method=DELETE"
+                    <form action="/hostels/<%= hostel._id %>/reviews/<%= review._id %>?_method=DELETE"
                           method="POST">
                         <button class="btn btn-sm btn-danger">DELETE</button>
                     </form>
@@ -109,6 +109,6 @@
 </div>
 <script>
     const mapToken = '<%- process.env.MAPBOX_TOKEN %>';
-    const campground = <%- JSON.stringify(campground) %>;
+    const hostel = <%- JSON.stringify(hostel) %>;
 </script>
 <script src="/javascripts/showPageMap.js"></script>

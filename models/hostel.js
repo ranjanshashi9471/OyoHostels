@@ -16,7 +16,7 @@ ImageSchema.virtual('thumbnail').get(function(){
 
 const opts = { toJSON: {virtuals: true}}
 
-const CampgroundSchema = new Schema({
+const HostelSchema = new Schema({
     title: String,
     images:[ImageSchema],
     geometry:{
@@ -47,18 +47,18 @@ const CampgroundSchema = new Schema({
     ]
 }, opts);
 
-CampgroundSchema.virtual('properties.popUpMarkup').get(function(){
-    return `<strong><a href="/campgrounds/${this._id}">${this.title}</a></strong>
+HostelSchema.virtual('properties.popUpMarkup').get(function(){
+    return `<strong><a href="/hostels/${this._id}">${this.title}</a></strong>
         <p>${this.description.substring(0,20)}.....</p>`
 })
 
 
-// when delete route of campground was hit the doc is sent to theis post function as -> doc
-CampgroundSchema.post('findOneAndDelete', async function(doc){
+// when delete route of hostel was hit the doc is sent to theis post function as -> doc
+HostelSchema.post('findOneAndDelete', async function(doc){
     if(doc){
         const review = await Review.deleteMany({_id:{$in:doc.reviews}})
     }
 })
 
-const Campground = mongoose.model('Campground', CampgroundSchema);
-module.exports = Campground;
+const Hostel = mongoose.model('Hostel', HostelSchema);
+module.exports = Hostel;
