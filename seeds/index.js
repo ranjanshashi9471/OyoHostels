@@ -1,3 +1,4 @@
+require('dotenv').config();
 const mongoose = require('mongoose');
 
 mongoose.set('strictQuery',false);
@@ -23,7 +24,7 @@ const { newData } =require('./cities.js');
         await Campground.deleteMany({});
         for(let data of newData){
             const camp = new Campground({
-                author: '643062dfdeb95fc18fa09750',
+                author: '6432683b32d1f0445515cecf',
                 title: `${data.name}`,
                 description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque explicabo, at esse ipsa possimus lorem Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque explicabo, at esse ipsa possimus",
                 price: 20,

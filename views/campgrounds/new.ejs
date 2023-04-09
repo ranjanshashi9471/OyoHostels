@@ -1,6 +1,6 @@
 <% layout('layouts/boilerplate.ejs') %>
 <div class="row mb-5 mx-5">
-    <h1 class="text-center">New Campground</h1>
+    <h1 class="text-center">New Hostel</h1>
     <div class="col-md-6 offset-3 shadow rounded pb-3 pt-2 mx-auto bg-light">
         <form action="/campgrounds" method="POST" class="validated-form" novalidate enctype="multipart/form-data">
             <div class="mb-3">
@@ -18,7 +18,11 @@
                 </div>
             </div>
             <div class="mb-3">
-                <label class="form-label" for="location" for="price">Campground Price</label>
+                <input class="form-control mb-3" type="text" id="latitude" name="campground[latitude]" placeholder="Latitude">
+                <input class="form-control" type="text" id="longitude" name="campground[longitude]" placeholder="Longitude">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="location" for="price">Hostel Price</label>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="price-label">$</span>
                     <input type="number" class="form-control" placeholder="0.00" id="price" aria-label="Price"
@@ -41,10 +45,10 @@
                 <input class="form-control" type="file" id="image" name="image" multiple>
             </div>
             <div class="mb-3">
-                <button class="btn btn-success">Add Campground</button>
+                <button class="btn btn-success">Add Hostel</button>
             </div>
         </form>
-        <a class="text-decoration-none text-secondary" href="/campgrounds">All Campgrounds</a>
+        <a class="text-decoration-none text-secondary" href="/campgrounds">All Hostels</a>
     </div>
 </div>
 <% layout('layouts/boilerplate.ejs') %>
