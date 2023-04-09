@@ -1,5 +1,5 @@
 <% layout('layouts/boilerplate.ejs') %>
-<div class="row mb-5 mx-5">
+<div class="row mb-4 mx-5">
     <h1 class="text-center">New Hostel</h1>
     <div class="col-md-6 offset-3 shadow rounded pb-3 pt-2 mx-auto bg-light">
         <form action="/campgrounds" method="POST" class="validated-form" novalidate enctype="multipart/form-data">
@@ -10,16 +10,21 @@
                     Looks good!
                 </div>
             </div>
-            <div class="mb-3">
-                <label class="form-label" for="location">Location</label>
-                <input class="form-control" type="text" id="location" name="campground[location]" required>
-                <div class="valid-feedback">
-                    Looks good!
+            <div class="border border-2 p-2 rounded">
+                <div class="mb-3">
+                    <label class="form-label" for="location">Location</label>
+                    <input class="form-control" type="text" id="location" name="campground[location]"
+                           placeholder="Enter the Address" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
                 </div>
-            </div>
-            <div class="mb-3">
-                <input class="form-control mb-3" type="text" id="latitude" name="campground[latitude]" placeholder="Latitude">
-                <input class="form-control" type="text" id="longitude" name="campground[longitude]" placeholder="Longitude">
+                <div class=" row gx-0 mb-3">
+                    <input class="col form-control me-3" type="text" id="latitude" name="campground[latitude]"
+                           placeholder="Latitude">
+                    <input class="col form-control" type="text" id="longitude" name="campground[longitude]"
+                           placeholder="Longitude">
+                </div>
             </div>
             <div class="mb-3">
                 <label class="form-label" for="location" for="price">Hostel Price</label>
