@@ -70,7 +70,7 @@ module.exports.updateHostel = async(req, res) => {
         }
         await hostel.updateOne({$pull:{ images:{ filename:{ $in: req.body.deleteImages } } } });
     }
-    req.flash('success','Successfullu updated hostel')
+    req.flash('success','Successfully updated hostel')
     res.redirect(`/hostels/${hostel._id}`);
 }
 
