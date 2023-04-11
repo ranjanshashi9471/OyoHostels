@@ -17,18 +17,22 @@ const userRoutes = require('./routes/users');
 const hostelRoutes = require('./routes/hostels');
 const reviewRoutes = require('./routes/reviews');
 const mongoSanitize = require('express-mongo-sanitize');
+const PORT = process.env.PORT || 3000;
 
 
 // ------------------------------------- CONNECTING TO THE DATABASE ------------------------------------------------
 mongoose.set('strictQuery',false);
-mongoose.connect(process.env.MONGODB)
-    .then(()=>{
-        console.log("Mongodb Connection open");
-    })
-    .catch((err)=>{
-        console.log("OH NO ERRORR");
-        console.log(err);
-    })
+const connectDB=async ()=>{
+    await mongoose.connect(process.env.MONGODB)
+        .then(()=>{
+            console.log("Mongodb Connection open");
+        })
+        .catch((err)=>{
+            console.log("OH NO ERRORR");
+            console.log(err);
+            process.exit(1);
+        })
+}
 
 // ------------------------------------- DEFINING THE APP ----------------------------------------------------------- 
 const app = express();
@@ -89,6 +93,8 @@ app.use((err, req, res, next)=>{
     res.status(statusCode).render('error.ejs',{err});
 })
  
-app.listen(3000, function(){
-    console.log("Server is started at the port 3000");
-})
+connectDB().then(()=> {
+    app.listen(PORT, function () {
+        console.log(`Server is started at the port ${PORT}`);
+    })
+});
