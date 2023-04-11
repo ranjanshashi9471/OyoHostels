@@ -17,12 +17,13 @@ const userRoutes = require('./routes/users');
 const hostelRoutes = require('./routes/hostels');
 const reviewRoutes = require('./routes/reviews');
 const mongoSanitize = require('express-mongo-sanitize');
+const MongoDBStore = require("connect-mongo")(session);
 const PORT = process.env.PORT || 3000;
 
 
 // ------------------------------------- CONNECTING TO THE DATABASE ------------------------------------------------
 mongoose.set('strictQuery',false);
-const connectDB=async ()=>{
+const connectDB = async ()=>{
     await mongoose.connect(process.env.MONGODB)
         .then(()=>{
             console.log("Mongodb Connection open");
@@ -47,14 +48,28 @@ app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname,'public')));
 app.use(mongoSanitize());
 
+const store = new MongoDBStore({
+    url: process.env.MONGODB,
+    secret: "thisshouldbeabettersecret!",
+    touchafter: 24 * 3600
+});
+
+store.on("error", function (e) {
+    console.log("SESSION STORE ERROR", e)
+})
+
 const sessionConfig = {
-    secret: 'thishsouldbeabettersecret!',
+    store,
+    name: 'session',
+    secret: "thisshouldbeabettersecret!",
     resave: false,
     saveUninitialized: true,
-    cookie:{
+    cookie: {
         httpOnly: true,
-        expires: Date.now() + 1000*60*60*24*7,
-        maxAge: 1000*60*60*24*7
+        // secure: true,
+        expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
+        maxAge: 1000 * 60 * 60 * 24 * 7,
+
     }
 }
 app.use(session(sessionConfig));
@@ -91,10 +106,10 @@ app.use((err, req, res, next)=>{
     const {statusCode = 500} = err;
     if(!err.message) err.messsge = "Oh No, something went wrong!!!"
     res.status(statusCode).render('error.ejs',{err});
-})
- 
+});
+
 connectDB().then(()=> {
-    app.listen(PORT, function () {
-        console.log(`Server is started at the port ${PORT}`);
-    })
+    app.listen(PORT, () => {
+        console.log("Server Live on Port ${PORT}");
+    });
 });
